@@ -1,0 +1,5 @@
+---
+
+name: abundances
+main_module: services.abundances.main.py
+type: query
