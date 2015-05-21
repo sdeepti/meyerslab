@@ -25,3 +25,41 @@ validate_request: true
 # Request the package 'requests' to perform HTTP requests
 requirements:
   - requests
+
+
+# This section is repeated from the file 'endpoints.yml'
+# because the current version of Adama doesn't support multiple YAML
+# files.
+# The development version will allow splitting the information in
+# multiple files for easier editing, for example 'endpoints.yml',
+# 'tags.yml', 'sources.yml', etc.
+endpoints:
+  /search:
+    parameters:
+      - name: gene
+        description: |
+          A description of the parameter
+        type: string
+        required: true
+        default: AT1G01010
+      - name: model
+        description:
+        type: string
+        required: false
+        default: 1
+        enum:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+          - '6'
+          - '7'
+          - '8'
+          - '9'
+          - '10'
+
+  # Declare that the list endpoint doesn't take parameters
+  # (not used for now)
+  /list:
+    parameters: []
