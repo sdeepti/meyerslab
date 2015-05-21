@@ -4,4 +4,10 @@ name: pare_phasing_analysis
 type: query
 main_module: services.pare_phasing_analysis.main.py
 
+whitelist:
+  - mpss.udel.edu
+
+requirements:
+  - requests
+
 # Fill rest of metadata as in 'abundances'
