@@ -12,7 +12,7 @@ authors:
     sponsor_organization: University of Delaware
     sponsor_uri: http://www.udel.edu/
 
-main_module: services.abundances.main.py
+main_module: services.at_abundances.main.py
 type: query
 
 # List of domains the service will need to access

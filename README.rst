@@ -28,7 +28,7 @@ The directory structure is::
       |_ __init__.py
       |_ common
       |   |_ tools.py
-      |_ abundances
+      |_ at_abundances
       |   |_ metadata.yml
       |   |_ main.py
       |_ pare_phasing_analysis
@@ -46,7 +46,7 @@ minimum, they contain a file ``metadata.yml`` containing information
 about the service, parameter documentation, authors, sources, etc.,
 and a file ``main.py`` containing the actual code for the service.
 
-The directory ``abundances`` contain a full example of all the
+The directory ``at_abundances`` contain a full example of all the
 possible fields in the metadata, with comments where necessary.
 
 
@@ -54,10 +54,10 @@ Adding new services
 ===================
 
 To complete the list of services at Meyers Lab, continue adding
-directories, similar to ``abundances`` and ``pare_phasing_analysis``.
+directories, similar to ``at_abundances`` and ``pare_phasing_analysis``.
 The directory ``pare_phasing_analysis`` contains an example to show
 how the code in ``main.py`` is almost identical to the one in
-``abundances``, once the bulk of the work has been moved to the
+``at_abundances``, once the bulk of the work has been moved to the
 ``common`` package.  Most of the differences across services will be
 in the ``metadata.yml`` files.
 
@@ -67,13 +67,13 @@ Testing the service locally
 
 Each service can be tested locally before submitting to Adama, to make
 sure there are no errors in the code.  This is an example of testing
-the service ``abundances``.
+the service ``at_abundances``.
 
 Go to the root directory of the git repository in your terminal and
 execute::
 
   $ python
-  >>> import services.abundances.main as m
+  >>> import services.at_abundances.main as m
   >>> m.search({'gene': 'AT1G01010', 'model': 1})
   ... output omitted ...
 
@@ -97,11 +97,11 @@ to ``curl`` but more powerful--strongly recommended):
   $ http https://api.araport.org/community/v0.3/meyerslab/services \
      Authorization:"Bearer $TOKEN" \
      git_repository=https://github.com/waltermoreira/meyerslab-proposal.git \
-     metadata=services/abundances
+     metadata=services/at_abundances
 
 Note the parameter ``metadata``.  This parameter (a path relative to
 the root of the git repository) tells Adama where to find the metadata
-file for the ``abundances`` service, since there are multiple services
+file for the ``at_abundances`` service, since there are multiple services
 in the same git repository.  Changing this parameter is the only
 change needed to register the remaining services.
 

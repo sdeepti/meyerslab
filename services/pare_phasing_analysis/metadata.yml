@@ -10,4 +10,4 @@ whitelist:
 requirements:
   - requests
 
-# Fill rest of metadata as in 'abundances'
+# Fill rest of metadata as in 'at_abundances'
