@@ -1,0 +1,12 @@
+---
+
+- title: Small RNA abundance database
+  description: Arabidopsis Small RNA JSON Web Services at Meyers Lab
+  language: en-us
+  last_modified: "2013-06-16T00:00:00"
+  sponsor_organization_name: University of Delaware
+  sponsor_uri: http://www.udel.edu
+  provider_name: Blake Meyers
+  provider_email: meyers@dbi.udel.edu
+  uri: https://mpss.udel.edu/dbs/index.php?SITE=at_sRNA
+  license: non-commercial

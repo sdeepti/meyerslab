@@ -1,5 +1,27 @@
 ---
 
-name: abundances
+name: at_abundances
+description: |
+  A full description of this service here.
+
+version: 0.1
+
+authors:
+  - name: John Smith
+    email: john@example.org
+    sponsor_organization: University of Delaware
+    sponsor_uri: http://www.udel.edu/
+
 main_module: services.abundances.main.py
 type: query
+
+# List of domains the service will need to access
+whitelist:
+  - mpss.udel.edu
+
+# Allow Adama to validate parameters
+validate_request: true
+
+# Request the package 'requests' to perform HTTP requests
+requirements:
+  - requests
