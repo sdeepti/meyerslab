@@ -7,6 +7,9 @@
         A description of the parameter
       type: string
       required: true
+      # providing a default helps to fill the UI with a meaningful
+      # value, so the user of the service can just press 'try it'
+      # and get results
       default: AT1G01010
     - name: model
       description:
