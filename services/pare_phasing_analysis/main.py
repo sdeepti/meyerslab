@@ -10,7 +10,8 @@ def search(args):
     strand = args.get('strand', 'w')
 
     data = services.common.tools.do_request(
-        'at_pare', 'PAinfo.php', chrnum=chrnum, win_beg=start, strand=strand)
+        'at_pare', 'PAinfo.php', list='phasing_analysis',
+        chrnum=chrnum, win_beg=start, strand=strand)
     services.common.tools.send(data['phasing_analysis'])
 
 
