@@ -2,7 +2,6 @@ import json
 
 import services.common.tools
 
-
 def search(args):
     chrnum = args['chrnum']
     start = args['start']
