@@ -26,7 +26,7 @@ def do_request(site, endpoint, **kwargs):
         raise Exception('not a JSON object: {}'.format(response.text))
 
 
-def send(data):
+def sendList(data):
     """Display `data` in the format required by Adama.
 
     :type data: list
@@ -36,3 +36,11 @@ def send(data):
     for elt in data:
         print json.dumps(elt)
         print '---'
+
+
+def send(data):
+    """Display `data` in the format required by Adama.
+
+    """
+    print json.dumps(data)
+    print '---'

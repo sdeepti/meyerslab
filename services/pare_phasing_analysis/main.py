@@ -11,7 +11,7 @@ def search(args):
     data = services.common.tools.do_request(
         'at_pare', 'PAinfo.php', list='phasing_analysis',
         chrnum=chrnum, win_beg=start, strand=strand)
-    services.common.tools.send(data['phasing_analysis'])
+    services.common.tools.sendList(data['phasing_analysis'])
 
 
 def list(args):
