@@ -1,0 +1,29 @@
+---
+
+name: pare_phasing_window
+type: query
+main_module: services.pare_phasing_window.main.py
+
+whitelist:
+  - mpss.udel.edu
+validate_request: true
+endpoints:
+  /search:
+    summary: Phasing information of a window & list of reads and phasing data
+    description: Phasing analysis data 
+    parameters:
+      - name: chrnum
+        description: Chromosome
+        type: string
+        required: true
+      - name: start 
+        description: Start 
+        type: string
+        required: true
+      - name: strand
+        description: Strand 
+        type: string
+        required: true
+requirements:
+  - requests
+
