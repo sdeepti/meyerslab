@@ -9,7 +9,7 @@ def search(args):
     strand = args.get('strand', 'w')
 
     data = services.common.tools.do_request(
-        'at_sRNA', 'PAinfo.php', list='phasing_analysis',
+        'at_pare', 'PAinfo.php', list='phasing_analysis',
         chrnum=chrnum, win_beg=start, strand=strand)
     services.common.tools.sendList(data['phasing_analysis'])
 

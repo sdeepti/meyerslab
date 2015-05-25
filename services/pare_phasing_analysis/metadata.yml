@@ -1,8 +1,8 @@
 ---
 
-name: sRNA_phasing_analysis 
+name: pare_phasing_analysis 
 type: query
-main_module: services.sRNA_phasing_analysis.main.py
+main_module: services.pare_phasing_analysis.main.py
 
 whitelist:
   - mpss.udel.edu
