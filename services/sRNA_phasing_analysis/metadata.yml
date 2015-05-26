@@ -2,8 +2,7 @@
 
 name: srna_phasing_analysis 
 type: query
-main_module: services.srna_phasing_analysis.main.py
-
+main_module: services.sRNA_phasing_analysis.main.py
 whitelist:
   - mpss.udel.edu
 validate_request: true
