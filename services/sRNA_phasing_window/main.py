@@ -12,7 +12,7 @@ def search(args):
         'at_sRNA', 'PAinfo.php', list='phasing_window',
         chrnum=chrnum, win_beg=start, strand=strand)
 
-    services.common.tools.send(data)
+    services.common.tools.send(data['phasing_analysis'])
 
 def list(args):
     raise Exception('not implemented yet')
