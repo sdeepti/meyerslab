@@ -1,0 +1,24 @@
+---
+
+name: srna_phasing_analysis_jbrowse
+type: generic
+main_module: services.sRNA_phasing_analysis_jbrowse.main.py
+whitelist:
+  - mpss.udel.edu
+validate_request: true
+endpoints:
+  /search:
+    summary: Phasing information of a window & list of reads and phasing data
+    description: Phasing analysis data converted into JBrowse compatible format
+    parameters:
+      - name: chr
+        description: Chromosome
+        type: string
+        required: true
+      - name: start
+        description: Start
+        type: int
+        required: true
+requirements:
+  - requests
+
