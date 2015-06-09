@@ -1,3 +1,4 @@
+import re
 import json
 
 import services.common.tools
@@ -10,8 +11,14 @@ def fail(message):
 
 
 def search(args):
-    chrnum = args['chr']
+    chr = args['chr']
     start = args['start']
+
+    chr_pat = re.compile(r'^Chr')
+    chrnum = re.sub(chr_pat, '', chr)
+    chrnum = 6 if chrnum == 'C' \
+            else 7 if chrnum == 'M' \
+            else chrnum
 
     r, data = services.common.tools.do_request(
         'at_sRNA', 'PAinfo.php', generic=True, list='phasing_analysis',

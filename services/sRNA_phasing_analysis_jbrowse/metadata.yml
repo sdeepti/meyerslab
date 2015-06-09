@@ -17,7 +17,8 @@ endpoints:
         required: true
       - name: start
         description: Start
-        type: int
+        type: integer
+        format: int64
         required: true
 requirements:
   - requests
