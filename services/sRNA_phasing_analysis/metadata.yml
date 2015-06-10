@@ -27,7 +27,6 @@ endpoints:
         enum:
           - 'w'
           - 'c'
-requirements:
-  - requests
+  
   
 
