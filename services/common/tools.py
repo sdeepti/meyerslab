@@ -32,17 +32,17 @@ def do_request(site, endpoint, generic=False, **kwargs):
     return data
 
 
-def sendJBrowse(data):
+def sendJBrowse(data, start=None, end=None):
     """Display `data` in the format required by JBrowse.
 
     """
     content = { 'features' : [] }
     for elt in data:
-        e = {
-                'start' : elt['position'],
-                'end' : elt['position'] + elt['length'],
-                'score' : 0
-            }
+        s, e = elt['position'], elt['position'] + elt['length']
+        if end and e > end + 26:
+            continue
+
+        e = { 'start' : s, 'end' : e, 'score' : 0 }
         for entry in elt['abundance_table']:
             accession, abundance = entry.items()[0]
             e['score'] += abundance

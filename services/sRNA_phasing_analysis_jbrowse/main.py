@@ -13,6 +13,7 @@ def fail(message):
 def search(args):
     chr = args['chr']
     start = args['start']
+    end = args['end']
 
     chr_pat = re.compile(r'^Chr')
     chrnum = re.sub(chr_pat, '', chr)
@@ -26,10 +27,11 @@ def search(args):
 
     if r.ok:
         return r.headers['Content-Type'], \
-                services.common.tools.sendJBrowse(data['phasing_analysis'])
+                services.common.tools.sendJBrowse(data['phasing_analysis'], \
+                start=start, end=end)
     else:
         return fail(r.text)
 
 
-def list(args):
-    raise Exception('not implemented yet')
+def list():
+    return 'application/json', json.dumps(dict())
