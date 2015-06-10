@@ -22,10 +22,10 @@ endpoints:
       - name: strand
         description: Strand 
         type: string
-        required: true
-        enum:
-          - w
-          - c
+        required: false 
+        default: w
+          - 'w'
+          - 'c'
 requirements:
   - requests
   
