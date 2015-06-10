@@ -7,7 +7,8 @@ def search(args):
     start = args['start']
     # default strand: w
     strand = args.get('strand', 'w')
-
+    strand = args.get('strand', 'c')
+    
     data = services.common.tools.do_request(
         'at_sRNA', 'PAinfo.php', list='phasing_analysis',
         chrnum=chrnum, win_beg=start, strand=strand)

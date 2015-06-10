@@ -23,6 +23,8 @@ endpoints:
         description: Strand 
         type: string
         required: true
-requirements:
-  - requests
+        enum:
+          - w
+          - c
+ 
 
