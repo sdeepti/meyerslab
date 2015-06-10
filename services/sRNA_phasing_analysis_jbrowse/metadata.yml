@@ -5,6 +5,7 @@ type: generic
 main_module: services.sRNA_phasing_analysis_jbrowse.main.py
 whitelist:
   - mpss.udel.edu
+validate_request: true
 endpoints:
   /search:
     summary: Phasing information of a window & list of reads and phasing data
@@ -14,30 +15,36 @@ endpoints:
         description: Chromosome
         type: string
         required: true
+        default: 'Chr1'
       - name: start
         description: Start
         type: integer
         format: int64
         required: true
+        default: 6464
       - name: end
         description: End
         type: integer
         format: int64
         required: true
+        default: 6653
       - name: strand
         description: Strand
         type: string
         enum:
           - '+'
           - '-'
+        default: '+'
       - name: scale
         description: Scale
         type: number
         format: double
+        default: 0.0
       - name: basesPerSpan
         description: Bases Per Span
         type: number
         format: double
+        default: 0.0
   /list:
     summary: Statistics of phasing information of a window & list of reads and phasing data
     description: Mimics the JBrowse /stats REST endpoint
@@ -50,21 +57,26 @@ endpoints:
           - 'global'
           - 'region'
           - 'regionFeatureDensities'
+        default: 'global'
       - name: chr
         description: Chromosome
         type: string
+        default: 'Chr1'
       - name: start
         description: Start
         type: integer
         format: int64
+        default: 6464
       - name: end
         description: End
         type: integer
         format: int64
+        default: 6653
       - name: basesPerBin
         description: Bases Per Bin
         type: number
         format: double
+        default: 0.0
 requirements:
   - requests
 

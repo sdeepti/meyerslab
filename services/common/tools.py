@@ -39,7 +39,8 @@ def sendJBrowse(data, start=None, end=None, strand='w'):
     content = { 'features' : [] }
     for elt in data:
         s, e = elt['position'], elt['position'] + elt['length']
-        if (end and e > end + 26) or elt['strand'] != strand:
+        if ((strand == 'w') and (end and s > end)) or \
+                ((strand == 'c') and (start and e < start)):
             continue
 
         e = { 'start' : s, 'end' : e, 'score' : 0 }

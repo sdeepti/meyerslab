@@ -14,7 +14,8 @@ def search(args):
     chrom = args['chr']
     start = args['start']
     end = args['end']
-    strand = args['strand']
+    strand = '+' if 'strand' not in args \
+            else args['strand']
 
     chr_pat = re.compile(r'^Chr')
     chrnum = re.sub(chr_pat, '', chrom)
@@ -39,5 +40,9 @@ def search(args):
 def list(args):
     stats = args['stats']
 
-    return 'application/json', json.dumps(dict())
+    out = dict()
+    if stats == 'global':
+        out = {'scoreMin': -1000, 'scoreMax': 1000}
+
+    return 'application/json', json.dumps(out)
 
