@@ -5,13 +5,13 @@ import services.common.tools
 def search(args):
     chrnum = args['chrnum']
     start = args['start']
-    # default strand: w
+    length = args['length']
     strand = args.get('strand', 'w')
     strand = args.get('strand', 'c')
     
     data = services.common.tools.do_request(
         'at_sRNA', 'PAinfo.php', list='phasing_analysis',
-        chrnum=chrnum, win_beg=start, strand=strand)
+        chrnum=chrnum, win_beg=start, strand=strand, length=length)
     services.common.tools.sendList(data['phasing_analysis'])
 
 
