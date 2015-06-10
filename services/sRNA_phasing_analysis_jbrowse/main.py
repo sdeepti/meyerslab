@@ -11,27 +11,33 @@ def fail(message):
 
 
 def search(args):
-    chr = args['chr']
+    chrom = args['chr']
     start = args['start']
     end = args['end']
+    strand = args['strand']
 
     chr_pat = re.compile(r'^Chr')
-    chrnum = re.sub(chr_pat, '', chr)
+    chrnum = re.sub(chr_pat, '', chrom)
     chrnum = 6 if chrnum == 'C' \
             else 7 if chrnum == 'M' \
             else chrnum
 
+    strand = 'w' if strand == '+' else 'c'
+
     r, data = services.common.tools.do_request(
         'at_sRNA', 'PAinfo.php', generic=True, list='phasing_analysis',
-        chrnum=chrnum, win_beg=start)
+        chrnum=chrnum, win_beg=start, strand=strand)
 
     if r.ok:
         return r.headers['Content-Type'], \
                 services.common.tools.sendJBrowse(data['phasing_analysis'], \
-                start=start, end=end)
+                start=start, end=end, strand=strand)
     else:
         return fail(r.text)
 
 
-def list():
+def list(args):
+    stats = args['stats']
+
     return 'application/json', json.dumps(dict())
+

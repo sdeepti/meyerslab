@@ -32,14 +32,14 @@ def do_request(site, endpoint, generic=False, **kwargs):
     return data
 
 
-def sendJBrowse(data, start=None, end=None):
+def sendJBrowse(data, start=None, end=None, strand='w'):
     """Display `data` in the format required by JBrowse.
 
     """
     content = { 'features' : [] }
     for elt in data:
         s, e = elt['position'], elt['position'] + elt['length']
-        if end and e > end + 26:
+        if (end and e > end + 26) or elt['strand'] != strand:
             continue
 
         e = { 'start' : s, 'end' : e, 'score' : 0 }

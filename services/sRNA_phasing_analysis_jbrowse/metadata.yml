@@ -9,7 +9,7 @@ validate_request: true
 endpoints:
   /search:
     summary: Phasing information of a window & list of reads and phasing data
-    description: Phasing analysis data converted into JBrowse compatible format
+    description: Mimics the JBrowse /features REST endpoint
     parameters:
       - name: chr
         description: Chromosome
@@ -25,6 +25,13 @@ endpoints:
         type: integer
         format: int64
         required: true
+      - name: strand
+        description: Strand
+        type: string
+        required: false
+        enum:
+          - '+'
+          - '-'
       - name: scale
         description: Scale
         type: number
@@ -32,6 +39,37 @@ endpoints:
         required: false
       - name: basesPerSpan
         description: Bases Per Span
+        type: number
+        format: double
+        required: false
+  /list:
+    summary: Statistics of phasing information of a window & list of reads and phasing data
+    description: Mimics the JBrowse /stats REST endpoint
+    parameters:
+      - name: stats
+        description: Statistics
+        type: string
+        required: true
+        enum:
+          - 'global'
+          - 'region'
+          - 'regionFeatureDensities'
+      - name: chr
+        description: Chromosome
+        type: string
+        required: false
+      - name: start
+        description: Start
+        type: integer
+        format: int64
+        required: false
+      - name: end
+        description: End
+        type: integer
+        format: int64
+        required: false
+      - name: basesPerBin
+        description: Bases Per Bin
         type: number
         format: double
         required: false
