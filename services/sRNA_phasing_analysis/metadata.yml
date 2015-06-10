@@ -24,6 +24,7 @@ endpoints:
         type: string
         required: false 
         default: w
+        enum:
           - 'w'
           - 'c'
 requirements:
