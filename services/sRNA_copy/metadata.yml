@@ -28,5 +28,4 @@ endpoints:
           - c
 requirements:
   - requests
-  - requ 
 
