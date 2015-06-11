@@ -36,7 +36,7 @@ endpoints:
       - name: strand
         description: Strand 
         type: string
-        required: true 
+        required: false 
         default: 'w'
         enum:
           - 'w'
