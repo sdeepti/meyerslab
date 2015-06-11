@@ -43,13 +43,15 @@ def sendJBrowse(data, start=None, end=None, strand='w'):
                 ((strand == 'c') and (start and e < start)):
             continue
 
-        e = { 'start' : s, 'end' : e, 'score' : 0 }
+        e = { 'id': elt['length'], 'start' : s, 'end' : e, 'score' : 0, 'score2': 0 }
         for entry in elt['abundance_table']:
             accession, abundance = entry.items()[0]
             e['score'] += abundance
+            e['score2'] += abundance
 
         if elt['strand'] == 'c':
             e['score'] = -abs(e['score'])
+            e['score2'] = -abs(e['score2'])
 
         content['features'].append(e)
 
