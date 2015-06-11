@@ -17,10 +17,18 @@ endpoints:
     summary: Phasing information of a window & list of reads and phasing data
     description: Phasing analysis data 
     parameters:
-      - name: chrnum
+      - name: chromosome 
         description: Chromosome
         type: string
         required: true
+        enum:
+          - 'CHR1'
+          - 'CHR2'
+          - 'CHR3'
+          - 'CHR4'
+          - 'CHR5'
+          - 'CHRM'
+          - 'CHRC'
       - name: start 
         description: Start 
         type: string
@@ -28,7 +36,7 @@ endpoints:
       - name: strand
         description: Strand 
         type: string
-        required: false 
+        required: true 
         default: 'w'
         enum:
           - 'w'
