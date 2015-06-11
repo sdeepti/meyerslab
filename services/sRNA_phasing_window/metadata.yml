@@ -6,24 +6,53 @@ main_module: services.sRNA_phasing_window.main.py
 
 whitelist:
   - mpss.udel.edu
+
 validate_request: true
+
+requirements:
+  - requests
+
 endpoints:
   /search:
     summary: Phasing information of a window & list of reads and phasing data
     description: Phasing analysis data 
     parameters:
-      - name: chrnum
+      - name: chromosome 
         description: Chromosome
         type: string
-        required: true
-      - name: start 
+        required: false
+        enum:
+          - 'Chr1'
+          - 'Chr2'
+          - 'Chr3'
+          - 'Chr4'
+          - 'Chr5'
+          - 'ChrM'
+          - 'ChrC'
+      - name: start
         description: Start 
         type: string
         required: true
       - name: strand
         description: Strand 
         type: string
-        required: true
-requirements:
-  - requests
+        required: false 
+        default: 'w'
+        enum:
+          - 'w'
+          - 'c'
+      - name: phase_len
+        description: PhaseLen
+        type: string
+        required: false 
+        default: '21'
+        enum:
+          - '19'
+          - '20'
+          - '21'
+          - '22'
+          - '23'
+          - '24'
+          - '25'
+
 
