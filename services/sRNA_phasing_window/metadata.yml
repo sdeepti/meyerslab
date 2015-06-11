@@ -6,7 +6,12 @@ main_module: services.sRNA_phasing_window.main.py
 
 whitelist:
   - mpss.udel.edu
+
 validate_request: true
+
+requirements:
+  - requests
+
 endpoints:
   /search:
     summary: Phasing information of a window & list of reads and phasing data
@@ -24,10 +29,22 @@ endpoints:
         description: Strand 
         type: string
         required: false 
-        default: w
+        default: 'w'
         enum:
           - 'w'
           - 'c'
-requirements:
-  - requests
+      - name: phase_len
+        description: PhaseLen
+        type: string
+        required: false 
+        default: '21'
+        enum:
+          - '19'
+          - '20'
+          - '21'
+          - '22'
+          - '23'
+          - '24'
+          - '25'
+
 
