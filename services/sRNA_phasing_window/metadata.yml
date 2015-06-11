@@ -20,16 +20,7 @@ endpoints:
       - name: chromosome 
         description: Chromosome
         type: string
-        required: false
-        default: 'chr1' 
-        enum:
-          - 'chr1'
-          - 'chr2'
-          - 'chr3'
-          - 'chr4'
-          - 'chr5'
-          - 'chrM'
-          - 'chrC'
+        required: true 
       - name: start 
         description: Start 
         type: string
