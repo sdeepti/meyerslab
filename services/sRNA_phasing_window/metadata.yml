@@ -21,7 +21,7 @@ endpoints:
         description: Chromosome
         type: string
         required: false
-        default: 'Chr1'
+        default: 'Chr 1'
         enum:
           - 'Chr 1'
           - 'Chr 2'
