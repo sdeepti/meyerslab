@@ -21,15 +21,15 @@ endpoints:
         description: Chromosome
         type: string
         required: false
-        default: 'CHR1' 
+        default: 'chr1' 
         enum:
-          - 'CHR1'
-          - 'CHR2'
-          - 'CHR3'
-          - 'CHR4'
-          - 'CHR5'
-          - 'CHRM'
-          - 'CHRC'
+          - 'chr1'
+          - 'chr2'
+          - 'chr3'
+          - 'chr4'
+          - 'chr5'
+          - 'chrM'
+          - 'chrC'
       - name: start 
         description: Start 
         type: string
