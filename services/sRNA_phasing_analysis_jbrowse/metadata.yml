@@ -1,6 +1,7 @@
 ---
 
 name: srna_phasing_analysis_jbrowse
+version: 0.2
 type: generic
 main_module: services.sRNA_phasing_analysis_jbrowse.main.py
 whitelist:
