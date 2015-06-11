@@ -39,19 +39,20 @@ def sendJBrowse(data, start=None, end=None, strand='w'):
     content = { 'features' : [] }
     for elt in data:
         s, e = elt['position'], elt['position'] + elt['length']
-        if ((strand == 'w') and (end and s > end)) or \
-                ((strand == 'c') and (start and e < start)):
+        if (s > end) or (e < start):
             continue
 
-        e = { 'id': elt['length'], 'start' : s, 'end' : e, 'score' : 0, 'score2': 0 }
+        id = 20 if elt['length'] <= 20 else \
+                25 if elt['length'] >= 25 else \
+                elt['length']
+
+        e = { 'id': id, 'start' : s, 'end' : e, 'score' : 0, 'signature': elt['sequence'] }
         for entry in elt['abundance_table']:
             accession, abundance = entry.items()[0]
             e['score'] += abundance
-            e['score2'] += abundance
 
         if elt['strand'] == 'c':
             e['score'] = -abs(e['score'])
-            e['score2'] = -abs(e['score2'])
 
         content['features'].append(e)
 
