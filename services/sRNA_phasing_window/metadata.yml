@@ -22,13 +22,13 @@ endpoints:
         type: string
         required: false
         enum:
-          - 'Chr1'
-          - 'Chr2'
-          - 'Chr3'
-          - 'Chr4'
-          - 'Chr5'
-          - 'ChrM'
-          - 'ChrC'
+          - 'CHR1'
+          - 'CHR2'
+          - 'CHR3'
+          - 'CHR4'
+          - 'CHR5'
+          - 'CHRM'
+          - 'CHRC'
       - name: start
         description: Start 
         type: string
