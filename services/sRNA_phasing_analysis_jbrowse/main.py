@@ -32,7 +32,7 @@ def search(args):
     if r.ok:
         return r.headers['Content-Type'], \
                 services.common.tools.sendJBrowse(data['phasing_analysis'], \
-                start=start, end=end, strand=strand)
+                start=start, end=end)
     else:
         return fail(r.text)
 

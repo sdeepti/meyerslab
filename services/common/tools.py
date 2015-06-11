@@ -32,7 +32,7 @@ def do_request(site, endpoint, generic=False, **kwargs):
     return data
 
 
-def sendJBrowse(data, start=None, end=None, strand='w'):
+def sendJBrowse(data, start=None, end=None):
     """Display `data` in the format required by JBrowse.
 
     """
