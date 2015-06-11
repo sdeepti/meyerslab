@@ -41,7 +41,7 @@ endpoints:
         enum:
           - 'w'
           - 'c'
-      - name: phase_len
+      - name: phaselength
         description: PhaseLen
         type: string
         required: false 
