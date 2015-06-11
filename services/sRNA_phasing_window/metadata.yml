@@ -20,7 +20,7 @@ endpoints:
       - name: chromosome 
         description: Chromosome
         type: string
-        required: true
+        required: false 
         enum:
           - 'CHR1'
           - 'CHR2'
