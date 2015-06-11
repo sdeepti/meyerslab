@@ -7,16 +7,14 @@ def search(args):
     start = args['start']
     strand = args['strand']
     phase_len = args.get('phase_len', 21)
-
-    words = chromosome.split();
-
-    if words[1] == 'M':
+    
+    if chromosome[3] == 'M': 
        chrnum = 6
-    elif words[1] == 'C':
+    elif chromosome[3] == 'C': 
        chrnum = 7
     else:
-       chrnum = words[1]
-  
+       chrnum = chromosome[3] 
+ 
     data = services.common.tools.do_request(
         'at_sRNA', 'PAinfo.php', list='phasing_window',
         chrnum=chrnum, win_beg=start, strand=strand, phase_len=phase_len)
