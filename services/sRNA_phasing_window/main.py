@@ -6,7 +6,7 @@ def search(args):
     chromosome = args['chromosome']
     start = args['start']
     strand = args['strand']
-    phase_len = args.get('phase_len', 21)
+    phase_len = args.get('phaselength', 21)
     
     if chromosome[3] == 'M': 
        chrnum = 6
