@@ -1,0 +1,27 @@
+---
+
+name: srna_phased_loci
+type: query
+main_module: services.sRNA_phased_loci.main.py
+
+whitelist:
+  - mpss.udel.edu
+
+validate_request: true
+
+requirements:
+  - requests
+
+endpoints:
+  /search:
+    summary: List of high-confidence phased loci for this website/db.
+    description: Phased loci data 
+    parameters:
+      - name: regulatory_mechanism
+        description: Regulatory Mechanism 
+        type: string
+        required: false 
+        default: 'phasi'
+        enum:
+          - 'phasi'
+          - 'tasi'
