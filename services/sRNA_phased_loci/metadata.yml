@@ -24,4 +24,4 @@ endpoints:
         default: 'phasi'
         enum:
           - 'phasi'
-          
+          - 'tasi'
