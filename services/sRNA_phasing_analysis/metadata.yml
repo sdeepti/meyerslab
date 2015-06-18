@@ -21,15 +21,14 @@ endpoints:
         description: Chromosome
         type: string
         required: false
-        default: 'Chr1'
         enum:
-          - 'Chr1'
-          - 'Chr2'
-          - 'Chr3'
-          - 'Chr4'
-          - 'Chr5'
-          - 'ChrM'
-          - 'ChrC'
+          - 'CHR1'
+          - 'CHR2'
+          - 'CHR3'
+          - 'CHR4'
+          - 'CHR5'
+          - 'CHRM'
+          - 'CHRC'
       - name: start
         description: Start 
         type: string
@@ -42,7 +41,7 @@ endpoints:
         enum:
           - 'w'
           - 'c'
-      - name: phase_len
+      - name: phaselength
         description: PhaseLen
         type: string
         required: false 

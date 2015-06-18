@@ -8,7 +8,7 @@ def search(args):
     strand = args['strand']
     phase_len = args.get('phase_len', 21)
 
-     if chromosome[3] == 'M':
+    if chromosome[3] == 'M':
        chrnum = 6
     elif chromosome[3] == 'C':
        chrnum = 7
