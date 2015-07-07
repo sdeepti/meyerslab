@@ -4,7 +4,7 @@ import services.common.tools
 
 def search(args):
     data = services.common.tools.do_request(
-        'at_sRNA', 'json.php', list='library')
+        'at_sRNA', 'json.php')
 
     services.common.tools.send(data['library'])
 
