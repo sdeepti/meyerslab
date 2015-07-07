@@ -1,6 +1,6 @@
 ---
 
-name: srna_libraryInfo
+name: srna_libraryinfo
 type: query
 main_module: services.sRNA_libraryInfo.main.py
 
