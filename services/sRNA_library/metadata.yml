@@ -1,8 +1,8 @@
 ---
 
-name: srna_chromosome
+name: srna_library
 type: query
-main_module: services.sRNA_chromosome.main.py
+main_module: services.sRNA_library.main.py
 
 whitelist:
   - mpss.udel.edu
@@ -14,5 +14,5 @@ requirements:
 
 endpoints:
   /search:
-    summary: List of chromosome values used in the website/db 
-    description: Chromosome information 
+    summary: List of libraries included in the website/db
+    description: Library information 
