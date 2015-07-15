@@ -1,0 +1,18 @@
+---
+
+name: srna_libraryinfo
+type: query
+main_module: services.sRNA_libraryInfo.main.py
+
+whitelist:
+  - mpss.udel.edu
+
+validate_request: true
+
+requirements:
+  - requests
+
+endpoints:
+  /search:
+    summary: List of basic metadata, read counts, etc 
+    description: Basci data information 

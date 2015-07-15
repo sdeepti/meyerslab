@@ -1,0 +1,18 @@
+---
+
+name: srna_chromosome
+type: query
+main_module: services.sRNA_chromosome.main.py
+
+whitelist:
+  - mpss.udel.edu
+
+validate_request: true
+
+requirements:
+  - requests
+
+endpoints:
+  /search:
+    summary: List of chromosome values used in the website/db 
+    description: Chromosome information 

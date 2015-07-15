@@ -1,0 +1,18 @@
+---
+
+name: srna_expression
+type: query
+main_module: services.sRNA_expression.main.py
+
+whitelist:
+  - mpss.udel.edu
+
+validate_request: true
+
+requirements:
+  - requests
+
+endpoints:
+  /search:
+    summary: Expression data summary of the website/db 
+    description: Expression information 
