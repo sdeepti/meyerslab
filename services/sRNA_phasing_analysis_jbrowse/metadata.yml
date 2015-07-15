@@ -22,12 +22,23 @@ requirements:
 endpoints:
   /search:
     description: Phasing information of a window & list of reads and phasing data
-    summary: Mimics the JBrowse /features REST endpoint
+    summary: Mimics the JBrowse REST API /features and /stats endpoints
     parameters:
+      - name: action
+        description: Select desired JBrowse REST API endpoint
+        type: string
+        required: true
+        enum:
+          - 'features'
+          - 'globalStats'
+          - 'regionStats'
+          - 'regionFeatureDensities'
+        default: 'features'
       - name: chr
         description: Chromosome
         type: string
         required: true
+        pattern: '^Chr[1-5CM]$'
         default: 'Chr1'
       - name: start
         description: Start
@@ -35,12 +46,14 @@ endpoints:
         format: int64
         required: true
         default: 6464
+        minimum: 1
       - name: end
         description: End
         type: integer
         format: int64
         required: true
         default: 6653
+        minimum: 1
       - name: strand
         description: Strand
         type: string
@@ -58,38 +71,13 @@ endpoints:
         type: number
         format: double
         default: 0.0
-  /list:
-    description: Statistics of phasing information of a window & list of reads and phasing data
-    summary: Mimics the JBrowse /stats REST endpoint
-    parameters:
-      - name: stats
-        description: Statistics
-        type: string
-        required: true
-        enum:
-          - 'global'
-          - 'region'
-          - 'regionFeatureDensities'
-        default: 'global'
-      - name: chr
-        description: Chromosome
-        type: string
-        default: 'Chr1'
-      - name: start
-        description: Start
-        type: integer
-        format: int64
-        default: 6464
-      - name: end
-        description: End
-        type: integer
-        format: int64
-        default: 6653
       - name: basesPerBin
         description: Bases Per Bin
         type: number
         format: double
         default: 0.0
+  /list:
+    description: Returns a list of A. thaliana chromosome identifiers and length
 
 sources:
   - title: "Arabidopsis Phasing Analysis Window with 21 nt"

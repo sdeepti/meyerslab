@@ -11,11 +11,16 @@ def fail(message):
 
 
 def search(args):
-    chrom = args['chr']
-    start = args['start']
-    end = args['end']
-    strand = '+' if 'strand' not in args \
-            else args['strand']
+    action = args['action']
+    chrom, start, end, strand = args['chr'], args['start'], \
+            args['end'], args['strand']
+    scale, basesPerBin, basesPerSpan = args['scale'], \
+            args['basesPerBin'], args['basesPerSpan']
+
+    phase_len = args.get('phase_len', 21)
+
+    if start >= end:
+        raise Exception('End coordinate must be greater than start')
 
     chr_pat = re.compile(r'^Chr')
     chrnum = re.sub(chr_pat, '', chrom)
@@ -25,24 +30,26 @@ def search(args):
 
     strand = 'w' if strand == '+' else 'c'
 
-    r, data = services.common.tools.do_request(
-        'at_sRNA', 'PAinfo.php', generic=True, list='phasing_analysis',
-        chrnum=chrnum, win_beg=start, strand=strand)
-
-    if r.ok:
-        return r.headers['Content-Type'], \
-                services.common.tools.sendJBrowse(data['phasing_analysis'], \
-                start=start, end=end)
-    else:
-        return fail(r.text)
-
-
-def list(args):
-    stats = args['stats']
-
     out = dict()
-    if stats == 'global':
-        out = {'scoreMin': -1000, 'scoreMax': 1000}
+    if action == 'features':
+        r, data = services.common.tools.do_request(
+            'at_sRNA', 'PAinfo.php', generic=True, list='phasing_analysis',
+            chrnum=chrnum, win_beg=start, strand=strand, phase_len=phase_len)
+
+        if r.ok:
+            return r.headers['Content-Type'], \
+                    services.common.tools.sendJBrowse(data['phasing_analysis'], \
+                    start=start, end=end)
+        else:
+            return fail(r.text)
+    elif action == 'globalStats':
+        out = { 'scoreMin': -1000, 'scoreMax': 1000 }
 
     return 'application/json', json.dumps(out)
 
+
+def list(args):
+    data = services.common.tools.do_request(
+        'at_sRNA', 'json.php', list='chromosome')
+
+    services.common.tools.send(data['chromosome'])

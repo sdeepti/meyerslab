@@ -46,7 +46,9 @@ def sendJBrowse(data, start=None, end=None):
                 25 if elt['length'] >= 25 else \
                 elt['length']
 
-        e = { 'id': id, 'start' : s, 'end' : e, 'score' : 0, 'signature': elt['sequence'] }
+        e = { 'id': id, 'start' : s, 'end' : e, 'score' : 0,
+              'signature': elt['sequence'] }
+
         for entry in elt['abundance_table']:
             accession, abundance = entry.items()[0]
             e['score'] += abundance
