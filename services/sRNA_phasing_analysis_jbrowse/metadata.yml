@@ -77,11 +77,13 @@ endpoints:
         format: double
         default: 0.0
   /list:
-    description: Returns a list of A. thaliana chromosome identifiers and length
+    summary: Returns a list of A. thaliana chromosome identifiers and length
+    description: Chromosome information
+    parameters: []
 
 sources:
   - title: "Arabidopsis Phasing Analysis Window with 21 nt"
-    description: "Highlight small RNAs `in phase` with the first selected position. Highlighted small RNAs correspond to the coordinates of each cycle (i.e. those that are in phase or register with the initial location), allowing a one nucleotide shift so that they may be -1/0/+1 nt relative to the start position, in increments corresponding to the phase length (i.e. for a 21-nt phase, acceptably phased small RNAs may be located 20, 21 or 22 nt away). Opposite-strand reads are shifted by (phasing length - 3) to allow for the 2-nt 3' overhang typical of a Dicer-mediated cleavage."
+    description: "Highlight small RNAs `in phase` with the first selected position, corresponding to the coordinates of each cycle."
     language: en-us
     sponsor_organization_name: University of Delaware
     sponsor_uri: https://mpss.udel.edu
