@@ -49,7 +49,10 @@ def search(args):
 
 
 def list(args):
-    data = services.common.tools.do_request(
-        'at_sRNA', 'json.php', list='chromosome')
+    r, data = services.common.tools.do_request(
+        'at_sRNA', 'json.php', generic=True, list='chromosome')
 
-    services.common.tools.send(data['chromosome'])
+    if r.ok:
+        return r.headers['Content-Type'], json.dumps(data['chromosome'])
+    else:
+        return fail(r.text)
