@@ -7,6 +7,8 @@ main_module: services.sRNA_chromosome.main.py
 whitelist:
   - mpss.udel.edu
 
+icon: favicon.ico
+
 validate_request: true
 
 requirements:
