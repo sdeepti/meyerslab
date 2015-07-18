@@ -17,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: List of basic metadata, read counts, etc 
-    description: Basci data information 
+    description: List of basic metadata, read counts, etc
