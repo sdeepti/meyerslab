@@ -17,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: List of chromosome values used in the website/db 
-    description: Chromosome information 
+    description: List of chromosome values used in the website/db

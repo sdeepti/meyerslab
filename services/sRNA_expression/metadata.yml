@@ -17,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: Expression data summary of the website/db 
-    description: Expression information 
+    description: Expression data summary of the website/db

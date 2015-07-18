@@ -17,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: List of other websites/db based on the same genomic data 
-    description: Other website information 
+    description: List of other websites/db based on the same genomic data

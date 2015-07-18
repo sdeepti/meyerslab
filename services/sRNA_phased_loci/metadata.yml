@@ -17,7 +17,7 @@ requirements:
 endpoints:
   /search:
     summary: List of high-confidence phased loci for this website/db.
-    description: Phased loci data 
+    description: List of high-confidence phased loci for this website/db.
     parameters:
       - name: regulatory_mechanism
         description: Regulatory Mechanism 

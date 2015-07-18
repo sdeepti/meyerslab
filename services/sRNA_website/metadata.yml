@@ -17,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: General information on the website/db.
-    description: Website information 
+    description: General information on the website/db.

@@ -17,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: List of libraries included in the website/db
-    description: Library information 
+    description: List of libraries included in the website/db
