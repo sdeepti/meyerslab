@@ -1,7 +1,7 @@
 ---
 name: srna_phasing_analysis_jbrowse
 description: Meyers Lab web service to return sRNA phasing analysis data in JBrowse compatible JSON format
-version: 0.2
+version: 0.3
 icon: meyerslab-nextgendb-logo.png
 
 authors:
