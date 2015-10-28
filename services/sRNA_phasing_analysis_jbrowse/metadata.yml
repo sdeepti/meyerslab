@@ -24,8 +24,8 @@ endpoints:
     description: Phasing information of a window & list of reads and phasing data
     summary: Mimics the JBrowse REST API /features and /stats endpoints
     parameters:
-      - name: action
-        description: Select desired JBrowse REST API endpoint
+      - name: q
+        description: Query the desired JBrowse REST API endpoint
         type: string
         required: true
         enum:

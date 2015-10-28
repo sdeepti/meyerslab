@@ -11,7 +11,7 @@ def fail(message):
 
 
 def search(args):
-    action = args['action']
+    q = args['q']
     chrom, start, end, strand = args['chr'], args['start'], \
             args['end'], args['strand']
     scale, basesPerBin, basesPerSpan = args['scale'], \
@@ -31,7 +31,7 @@ def search(args):
     strand = 'w' if strand == '+' else 'c'
 
     out = dict()
-    if action == 'features':
+    if q == 'features':
         r, data = services.common.tools.do_request(
             'at_sRNA', 'PAinfo.php', generic=True, list='phasing_analysis',
             chrnum=chrnum, win_beg=start, strand=strand, phase_len=phase_len)
@@ -42,7 +42,7 @@ def search(args):
                     start=start, end=end)
         else:
             return fail(r.text)
-    elif action == 'globalStats':
+    elif q == 'globalStats':
         out = { 'scoreMin': -1000, 'scoreMax': 1000 }
 
     return 'application/json', json.dumps(out)
