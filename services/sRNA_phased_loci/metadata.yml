@@ -5,7 +5,7 @@ type: query
 main_module: services.sRNA_phased_loci.main.py
 
 whitelist:
-  - mpss.udel.edu
+  - mpss.danforthcenter.org
 
 icon: ../logo.png
 
@@ -20,9 +20,9 @@ endpoints:
     description: List of high-confidence phased loci for this website/db.
     parameters:
       - name: regulatory_mechanism
-        description: Regulatory Mechanism 
+        description: Regulatory Mechanism
         type: string
-        required: false 
+        required: false
         default: 'phasi'
         enum:
           - 'phasi'

@@ -4,7 +4,7 @@ import urlparse
 import requests
 
 
-MEYERS_BASE_URL = 'https://mpss.udel.edu/web/php/pages/'
+MEYERS_BASE_URL = 'https://mpss.danforthcenter.org/web/php/pages/'
 
 
 def do_request(site, endpoint, **kwargs):
