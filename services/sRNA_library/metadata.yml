@@ -7,6 +7,8 @@ main_module: services.sRNA_library.main.py
 whitelist:
   - mpss.udel.edu
 
+icon: ../logo.png
+
 validate_request: true
 
 requirements:
@@ -15,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: List of libraries included in the website/db
-    description: Library information 
+    description: List of libraries included in the website/db

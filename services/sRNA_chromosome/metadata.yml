@@ -7,6 +7,8 @@ main_module: services.sRNA_chromosome.main.py
 whitelist:
   - mpss.udel.edu
 
+icon: ../logo.png
+
 validate_request: true
 
 requirements:
@@ -15,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: List of chromosome values used in the website/db 
-    description: Chromosome information 
+    description: List of chromosome values used in the website/db

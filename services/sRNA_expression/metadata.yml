@@ -7,6 +7,8 @@ main_module: services.sRNA_expression.main.py
 whitelist:
   - mpss.udel.edu
 
+icon: ../logo.png
+
 validate_request: true
 
 requirements:
@@ -15,4 +17,4 @@ requirements:
 endpoints:
   /search:
     summary: Expression data summary of the website/db 
-    description: Expression information 
+    description: Expression data summary of the website/db
