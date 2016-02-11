@@ -9,7 +9,7 @@ The proposal consists in having one git repository for the complete
 collection of Meyers Lab services that want to be exposed at Araport.
 Each service has its own directory.  Common code can be factored out.
 
-Each of the services at https://mpss.udel.edu/web/php/pages can
+Each of the services at https://mpss.danforthcenter.org/web/php/pages can
 correspond to one microservice in Adama under the namespace
 ``meyerslab``.
 
