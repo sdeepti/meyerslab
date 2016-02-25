@@ -1,0 +1,93 @@
+---
+name: srna_phasing_analysis_jbrowse
+description: Meyers Lab web service to return sRNA phasing analysis data in JBrowse compatible JSON format
+version: 0.3
+icon: meyerslab-nextgendb-logo.png
+
+authors:
+    - name: Vivek Krishnakumar
+      email: vkrishna@jcvi.org
+      sponsor_organization: J. Craig Venter Institute
+      sponsor_uri: http://www.jcvi.org
+
+type: generic
+main_module: services.sRNA_phasing_analysis_jbrowse.main.py
+url: https://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA
+validate_request: true
+whitelist:
+  - mpss.udel.edu
+requirements:
+  - requests
+
+endpoints:
+  /search:
+    description: Phasing information of a window & list of reads and phasing data
+    summary: Mimics the JBrowse REST API /features and /stats endpoints
+    parameters:
+      - name: q
+        description: Query the desired JBrowse REST API endpoint
+        type: string
+        required: true
+        enum:
+          - 'features'
+          - 'globalStats'
+          - 'regionStats'
+          - 'regionFeatureDensities'
+        default: 'features'
+      - name: chr
+        description: Chromosome
+        type: string
+        required: true
+        pattern: '^Chr[1-5CM]$'
+        default: 'Chr1'
+      - name: start
+        description: Start
+        type: integer
+        format: int64
+        required: true
+        default: 6464
+        minimum: 1
+      - name: end
+        description: End
+        type: integer
+        format: int64
+        required: true
+        default: 6653
+        minimum: 1
+      - name: strand
+        description: Strand
+        type: string
+        enum:
+          - '+'
+          - '-'
+        default: '+'
+      - name: scale
+        description: Scale
+        type: number
+        format: double
+        default: 0.0
+      - name: basesPerSpan
+        description: Bases Per Span
+        type: number
+        format: double
+        default: 0.0
+      - name: basesPerBin
+        description: Bases Per Bin
+        type: number
+        format: double
+        default: 0.0
+  /list:
+    summary: Returns a list of A. thaliana chromosome identifiers and length
+    description: Chromosome information
+    parameters: []
+
+sources:
+  - title: "Arabidopsis Phasing Analysis Window with 21 nt"
+    description: "Highlight small RNAs `in phase` with the first selected position, corresponding to the coordinates of each cycle."
+    language: en-us
+    sponsor_organization_name: University of Delaware
+    sponsor_uri: https://mpss.udel.edu
+    provider_name: Blake Meyers
+    provider_email: meyers@dbi.udel.edu
+    uri: https://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA
+

@@ -5,7 +5,7 @@ type: query
 main_module: services.sRNA_phasing_window.main.py
 
 whitelist:
-  - mpss.udel.edu
+  - mpss.danforthcenter.org
 
 icon: ../logo.png
 

@@ -17,7 +17,7 @@ type: query
 
 # List of domains the service will need to access
 whitelist:
-  - mpss.udel.edu
+  - mpss.danforthcenter.org
 
 # Allow Adama to validate parameters
 validate_request: true
