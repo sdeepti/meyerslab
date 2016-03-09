@@ -1,15 +1,15 @@
 # file: metadata.yml
-
 ---
+
 name: strand
 version: 0.1
 type: query
-main_module: main.py
+main_module: services.strand.main.py
 url: http://mpss.danforthcenter.org/
 description: Strand values used in all meyerslab websites/dbs
 whitelist:
   - mpss.danforthcenter.org
-icon: logo.png
+icon: ../logo.png
 endpoints:
   /search:
     summary: Small RNA basic metadata
